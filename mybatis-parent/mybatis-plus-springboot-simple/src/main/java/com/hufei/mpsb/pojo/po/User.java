@@ -1,28 +1,29 @@
-package com.hufei.pojo.po;
+package com.hufei.mpsb.pojo.po;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * <p> 用户实体 </p>
- *
- * @author hufei
- * @date 2021/2/21 17:43
- * @version 1.0.0
- */
 @Data
-//注解在类上，为类提供一个无参的构造
 @NoArgsConstructor
-//为类提供一个全参的构造
 @AllArgsConstructor
 @TableName("tb_user")
 public class User {
+
+//    @TableId(type = IdType.AUTO)
     private Long id;
     private String userName;
+
+//    @TableField(select = false) //查询时不返回该字段的值
     private String password;
     private String name;
     private Integer age;
+
+//    @TableField(value = "email") //指定数据表中字段名
     private String email;
+
+//    @TableField(exist = false)
+//    private String address; //在数据库表中是不存在的
 }

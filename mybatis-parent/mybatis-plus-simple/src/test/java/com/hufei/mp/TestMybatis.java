@@ -1,8 +1,7 @@
-package com.hufei;
+package com.hufei.mp;
 
-import com.baomidou.mybatisplus.core.MybatisSqlSessionFactoryBuilder;
-import com.hufei.mapper.UserMapper;
-import com.hufei.pojo.po.User;
+import com.hufei.mp.mapper.UserMapper;
+import com.hufei.mp.pojo.po.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -12,22 +11,26 @@ import org.junit.Test;
 import java.io.InputStream;
 import java.util.List;
 
-public class TestMybatisPlus {
+public class TestMybatis {
 
     @Test
     public void testFindAll() throws Exception{
 
+        /*获取session工厂*/
+        //配置mybatis配置文件的名称
         String config = "mybatis-config.xml";
+        //根据配置文件名称加载配置文件
         InputStream inputStream = Resources.getResourceAsStream(config);
-        //MybatisSqlSessionFactoryBuilder这个对象不是mybatis原生的对象，而是mybatis-plus定义的对象
-        SqlSessionFactory sqlSessionFactory = new MybatisSqlSessionFactoryBuilder().build(inputStream);
-
+        //创建session工厂，将指定的配置文件设置到工厂中
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        /*获取sqlSession*/
+        //从工厂中获取sqlsession
         SqlSession sqlSession = sqlSessionFactory.openSession();
+        //从sqlsession中获取对应Mapper
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
         //测试查询
-//        List<User> users = userMapper.findAll();
-        List<User> users = userMapper.selectList(null);
+        List<User> users = userMapper.findAll();
         for (User user : users) {
             System.out.println(user);
         }

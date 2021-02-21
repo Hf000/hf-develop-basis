@@ -1,4 +1,4 @@
-package com.hufei.pojo.po;
+package com.hufei.mp.pojo.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;

@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hufei.mp.mapper.UserMapper">
+<mapper namespace="com.hufei.mpsb.mapper.UserMapper">
 
-    <select id="findAll" resultType="com.hufei.mp.pojo.po.User">
-        select * from tb_user
+    <select id="findById" resultType="com.hufei.mpsb.pojo.po.User">
+        select * from tb_user where id = #{id}
     </select>
 
 </mapper>

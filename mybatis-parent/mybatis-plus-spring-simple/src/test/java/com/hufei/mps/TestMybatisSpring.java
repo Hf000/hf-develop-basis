@@ -1,7 +1,7 @@
-package com.hufei;
+package com.hufei.mps;
 
-import com.hufei.mapper.UserMapper;
-import com.hufei.pojo.po.User;
+import com.hufei.mps.mapper.UserMapper;
+import com.hufei.mps.pojo.po.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

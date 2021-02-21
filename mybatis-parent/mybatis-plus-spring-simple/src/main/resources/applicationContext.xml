@@ -38,7 +38,7 @@
 
     <!--扫描mapper接口，使用的依然是Mybatis原生的扫描器-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.hufei.mapper"/>
+        <property name="basePackage" value="com.hufei.mps.mapper"/>
     </bean>
 
 </beans>
