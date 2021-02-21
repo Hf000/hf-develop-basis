@@ -49,7 +49,7 @@
 
     <build>
         <plugins>
-            <!--springboot-maven插件-->
+            <!--配置打jar包插件，打jar包时如果不配置该插件，打出来的jar包没有清单文件-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

@@ -1,0 +1,24 @@
+spring:     #spring配置项
+  datasource:    #数据源配置项
+    driver-class-name: com.mysql.jdbc.Driver      #数据库驱动类地址
+    url: jdbc:mysql://127.0.0.1:3306/develop-basis?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false      #数据库连接地址
+    username: root      #数据库账号
+    password: root      #数据库密码
+    type: com.alibaba.druid.pool.DruidDataSource   #druid连接池
+
+logging:      #配置日志的记录级别
+  level:      #日志等级配置项
+    com.hufei.mts: error      #表示以com.hufei开头的类的日志记录级别是debug
+    org.springframework: error     #表示以org.springframework开头的类的日志记录级别是info
+
+mybatis:      #mybatis配置
+  type-aliases-package: com.hufei.mts.pojo.po      #配置实体类别名包路径，配置这个配置项在mapper里面就不需要写全限定名了，只需要写对应实体类名即可
+  mapper-locations: classpath:mapper/mts/*.xml      #配置mapper映射文件路径地址，如果没有则不写该项配置
+  configuration:      #配置mybati日志配置项
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl     #配置mybatis日志后台输出
+
+mapper:     #通用mapper配置项
+  identity: MYSQL     #取回主键的方式
+  not-empty: false      #是否判断字符串类型!=''
+#  mappers: com.hufei.mapper.BaseMapper      #基础mapper接口路径,在这里继承通用Mapper<T>
+
