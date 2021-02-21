@@ -12,6 +12,11 @@
     <artifactId>mybatis-tk-springboot-simple</artifactId>
     <packaging>jar</packaging>
 
+    <properties>
+        <mybatis-generator-maven-plugin.version>1.3.7</mybatis-generator-maven-plugin.version>
+        <mapper-generator.version>1.1.5</mapper-generator.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -70,7 +75,8 @@
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.7</version><!--注意版本兼容问题-->
+                <!--注意版本兼容问题-->
+                <version>${mybatis-generator-maven-plugin.version}</version>
                 <configuration>
                     <!--配置mybatis-generator配置文件路径-->
                     <configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
@@ -81,12 +87,11 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.47</version>
                     </dependency>
                     <dependency>
                         <groupId>tk.mybatis</groupId>
                         <artifactId>mapper-generator</artifactId>
-                        <version>1.1.5</version>
+                        <version>${mapper-generator.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
