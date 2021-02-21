@@ -20,5 +20,5 @@ mybatis:      #mybatis配置
 mapper:     #通用mapper配置项
   identity: MYSQL     #取回主键的方式
   not-empty: false      #是否判断字符串类型!=''
-#  mappers: com.hufei.mapper.BaseMapper      #基础mapper接口路径,在这里继承通用Mapper<T>
+#  mappers: com.hufei.mts.mapper.BaseMapper      #基础mapper接口路径,在这里继承通用Mapper<T>
 
