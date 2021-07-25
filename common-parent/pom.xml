@@ -12,5 +12,25 @@
 
     <!-- 公共模块 -->
     <artifactId>common-parent</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>unified-exception-handle</module>
+        <module>common-public</module>
+    </modules>
+
+    <properties>
+        <hutool.version>5.7.5</hutool.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
