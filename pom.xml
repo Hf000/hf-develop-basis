@@ -23,7 +23,7 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.3.RELEASE</version>
         <!--默认../pom.xml,maven首先从父工程的pom文件开始找->本地仓库->远程仓库，设置一个空值则始终从远程仓库获取-->
-        <!--<relativePath/>-->123
+        <!--<relativePath/>-->
     </parent>
 
 </project>
