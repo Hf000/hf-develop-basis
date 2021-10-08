@@ -1,7 +1,7 @@
 package com.hufei.ueh.cusexception;
 
+import com.hufei.cp.interfs.StatusCode;
 import com.hufei.ueh.enums.ExceptionStates;
-import com.hufei.ueh.interfs.ExceptionCode;
 
 /**
  * <p> 自定义可检查异常父类 </p>
@@ -10,7 +10,7 @@ import com.hufei.ueh.interfs.ExceptionCode;
  * @version 1.0.0
  * @date 2021/7/25 18:33
  */
-public class CheckedException extends Exception implements ExceptionCode {
+public class CheckedException extends Exception {
 
     private String code;
     private String msg;
@@ -20,9 +20,9 @@ public class CheckedException extends Exception implements ExceptionCode {
         this.msg = msg;
     }
 
-    protected CheckedException(ExceptionCode exceptionCode) {
-        this.code = exceptionCode.getCode();
-        this.msg = exceptionCode.getMsg();
+    protected CheckedException(StatusCode statusCode) {
+        this.code = statusCode.getCode();
+        this.msg = statusCode.getMsg();
     }
 
     protected CheckedException(String msg) {
@@ -30,8 +30,8 @@ public class CheckedException extends Exception implements ExceptionCode {
         this.msg = msg;
     }
 
-    protected CheckedException(ExceptionCode exceptionCode, String msg) {
-        this.code = exceptionCode.getCode();
+    protected CheckedException(StatusCode statusCode, String msg) {
+        this.code = statusCode.getCode();
         this.msg = msg;
     }
 
@@ -40,12 +40,10 @@ public class CheckedException extends Exception implements ExceptionCode {
         this.msg = ExceptionStates.SYSTEMERROR.getMsg();
     }
 
-    @Override
     public String getCode() {
         return this.code;
     }
 
-    @Override
     public String getMsg() {
         return this.msg;
     }

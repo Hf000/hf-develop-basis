@@ -1,8 +1,6 @@
 package com.hufei.cp.response;
 
-import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.date.LocalDateTimeUtil;
 import com.hufei.cp.enums.ResponseStates;
 
 import java.io.Serializable;
@@ -64,5 +62,16 @@ public class ResponseVO<T> implements Serializable {
 
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
+    }
+
+    @Override
+    public String toString() {
+        return "ResponseVO{" +
+                "responseCode='" + responseCode + '\'' +
+                ", responseMsg='" + responseMsg + '\'' +
+                ", requestId='" + requestId + '\'' +
+                ", timestamp=" + timestamp +
+                ", Data=" + Data +
+                '}';
     }
 }

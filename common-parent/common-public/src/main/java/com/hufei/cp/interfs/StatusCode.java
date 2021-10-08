@@ -9,7 +9,16 @@ package com.hufei.cp.interfs;
  */
 public interface StatusCode {
 
+    /**
+     * 提示码
+     * @return 返回提示码
+     */
     String getCode();
+
+    /**
+     * 提示信息
+     * @return 返回提示信息
+     */
     String getMsg();
 
 }

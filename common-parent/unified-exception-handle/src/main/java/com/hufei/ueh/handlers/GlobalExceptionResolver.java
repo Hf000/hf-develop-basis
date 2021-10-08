@@ -21,11 +21,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionResolver {
 
     /**
-     * 捕获throwable异常
+     * 捕获throwable异常 //创建异常处理器
      * @param e Throwable
      * @return ResponseVO<Void>
      */
-    @ExceptionHandler(Throwable.class)           //创建异常处理器
+    @ExceptionHandler(Throwable.class)
     public ResponseVO<Void> throwableHandlerMethod(Throwable e) {
         log.error("get a Throwable", e);
         ResponseVO<Void> responseVO = new ResponseVO<>();
@@ -35,11 +35,11 @@ public class GlobalExceptionResolver {
     }
 
     /**
-     * 捕获exception异常
+     * 捕获exception异常 //创建异常处理器
      * @param e Exception
      * @return ResponseVO<Void>
      */
-    @ExceptionHandler(Exception.class)           //创建异常处理器
+    @ExceptionHandler(Exception.class)
     public ResponseVO<Void> exceptionHandlerMethod(Exception e) {
         log.error("get a Exception", e);
         ResponseVO<Void> responseVO = new ResponseVO<>();
@@ -49,11 +49,11 @@ public class GlobalExceptionResolver {
     }
 
     /**
-     * 捕获RuntimeException异常
+     * 捕获RuntimeException异常 //创建异常处理器
      * @param e RuntimeException
      * @return ResponseVO<Void>
      */
-    @ExceptionHandler(RuntimeException.class)           //创建异常处理器
+    @ExceptionHandler(RuntimeException.class)
     public ResponseVO<Void> runtimeExceptionHandlerMethod(RuntimeException e) {
         log.error("get a RuntimeException", e);
         ResponseVO<Void> responseVO = new ResponseVO<>();
@@ -63,11 +63,11 @@ public class GlobalExceptionResolver {
     }
 
     /**
-     * 捕获CheckedException异常
+     * 捕获CheckedException异常 //创建异常处理器
      * @param e CheckedException
      * @return ResponseVO<Void>
      */
-    @ExceptionHandler(CheckedException.class)           //创建异常处理器
+    @ExceptionHandler(CheckedException.class)
     public ResponseVO<Void> checkedExceptionHandlerMethod(CheckedException e) {
         log.error("get a CheckedException", e);
         ResponseVO<Void> responseVO = new ResponseVO<>();
@@ -77,11 +77,11 @@ public class GlobalExceptionResolver {
     }
 
     /**
-     * 捕获UnCheckedException异常
+     * 捕获UnCheckedException异常 //创建异常处理器
      * @param e UnCheckedException
      * @return ResponseVO<Void>
      */
-    @ExceptionHandler(UnCheckedException.class)           //创建异常处理器
+    @ExceptionHandler(UnCheckedException.class)
     public ResponseVO<Void> unCheckedExceptionHandlerMethod(UnCheckedException e) {
         log.error("get a UnCheckedException", e);
         ResponseVO<Void> responseVO = new ResponseVO<>();
@@ -91,11 +91,11 @@ public class GlobalExceptionResolver {
     }
 
     /**
-     * 捕获WebException异常
+     * 捕获WebException异常 //创建异常处理器
      * @param e WebException
      * @return ResponseVO<Void>
      */
-    @ExceptionHandler(WebException.class)           //创建异常处理器
+    @ExceptionHandler(WebException.class)
     public ResponseVO<Void> webExceptionHandlerMethod(WebException e) {
         log.error("get a WebException", e);
         ResponseVO<Void> responseVO = new ResponseVO<>();

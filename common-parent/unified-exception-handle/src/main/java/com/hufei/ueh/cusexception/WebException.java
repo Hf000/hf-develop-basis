@@ -1,7 +1,7 @@
 package com.hufei.ueh.cusexception;
 
+import com.hufei.cp.interfs.StatusCode;
 import com.hufei.ueh.enums.ExceptionStates;
-import com.hufei.ueh.interfs.ExceptionCode;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * @version 1.0.0
  * @date 2021/7/25 18:33
  */
-public class WebException extends RuntimeException implements ExceptionCode {
+public class WebException extends RuntimeException  {
 
     private String code;
     private String msg;
@@ -24,9 +24,9 @@ public class WebException extends RuntimeException implements ExceptionCode {
         this.dataList = dataList;
     }
 
-    protected WebException(ExceptionCode exceptionCode, List<?> dataList) {
-        this.code = exceptionCode.getCode();
-        this.msg = exceptionCode.getMsg();
+    protected WebException(StatusCode statusCode, List<?> dataList) {
+        this.code = statusCode.getCode();
+        this.msg = statusCode.getMsg();
         this.dataList = dataList;
     }
 
@@ -36,8 +36,8 @@ public class WebException extends RuntimeException implements ExceptionCode {
         this.dataList = dataList;
     }
 
-    protected WebException(ExceptionCode exceptionCode, String msg, List<?> dataList) {
-        this.code = exceptionCode.getCode();
+    protected WebException(StatusCode statusCode, String msg, List<?> dataList) {
+        this.code = statusCode.getCode();
         this.msg = msg;
         this.dataList = dataList;
     }
@@ -47,12 +47,10 @@ public class WebException extends RuntimeException implements ExceptionCode {
         this.msg = ExceptionStates.SYSTEMERROR.getMsg();
     }
 
-    @Override
     public String getCode() {
         return this.code;
     }
 
-    @Override
     public String getMsg() {
         return this.msg;
     }
