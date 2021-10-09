@@ -12,8 +12,9 @@ import com.hufei.ueh.enums.ExceptionStates;
  */
 public class UnCheckedException extends RuntimeException {
 
-    private String code;
-    private String msg;
+    private static final long serialVersionUID = 1785513248562676275L;
+    protected String code;
+    protected String msg;
 
     protected UnCheckedException(String code, String msg) {
         this.code = code;

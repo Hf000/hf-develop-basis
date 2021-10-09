@@ -12,8 +12,9 @@ import com.hufei.ueh.enums.ExceptionStates;
  */
 public class CheckedException extends Exception {
 
-    private String code;
-    private String msg;
+    private static final long serialVersionUID = -8726161704595220578L;
+    protected String code;
+    protected String msg;
 
     protected CheckedException(String code, String msg) {
         this.code = code;

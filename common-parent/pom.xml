@@ -12,15 +12,18 @@
 
     <!-- 公共模块 -->
     <artifactId>common-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
         <module>unified-exception-handle</module>
         <module>common-public</module>
+        <module>common-config</module>
     </modules>
 
     <properties>
         <hutool.version>5.7.5</hutool.version>
+        <json-lib.version>2.4</json-lib.version>
     </properties>
 
     <dependencyManagement>
@@ -29,6 +32,12 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.json-lib</groupId>
+                <artifactId>json-lib</artifactId>
+                <version>${json-lib.version}</version>
+                <classifier>jdk15</classifier>
             </dependency>
         </dependencies>
     </dependencyManagement>

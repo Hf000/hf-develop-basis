@@ -1,4 +1,4 @@
-# hf-develop-basis
+# mybatis-plus-simple
 personal study
 
 # 1. MyBatis的简单应用

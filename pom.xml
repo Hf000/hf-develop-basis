@@ -15,6 +15,7 @@
     <modules>
         <module>mybatis-parent</module>
         <module>common-parent</module>
+        <module>web-simple</module>
     </modules>
 
     <!--依赖springboot父工程信息-->
@@ -25,5 +26,9 @@
         <!--默认../pom.xml,maven首先从父工程的pom文件开始找->本地仓库->远程仓库，设置一个空值则始终从远程仓库获取-->
         <!--<relativePath/>-->
     </parent>
+
+    <properties>
+        <base-project.version>1.0-SNAPSHOT</base-project.version>
+    </properties>
 
 </project>

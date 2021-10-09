@@ -17,8 +17,8 @@ public enum ExceptionStates implements StatusCode {
     CHECKERROR("400001", "检查异常"),
     ;
 
-    private String code;
-    private String msg;
+    private final String code;
+    private final String msg;
 
     private ExceptionStates(String code, String msg) {
         this.code = code;
@@ -27,11 +27,11 @@ public enum ExceptionStates implements StatusCode {
 
     @Override
     public String getCode() {
-        return null;
+        return this.code;
     }
 
     @Override
     public String getMsg() {
-        return null;
+        return this.msg;
     }
 }

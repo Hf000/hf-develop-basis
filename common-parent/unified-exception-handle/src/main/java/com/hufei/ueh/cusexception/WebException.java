@@ -14,9 +14,10 @@ import java.util.List;
  */
 public class WebException extends RuntimeException  {
 
-    private String code;
-    private String msg;
-    private List<?> dataList;
+    private static final long serialVersionUID = -5098852202248205572L;
+    protected String code;
+    protected String msg;
+    protected List<?> dataList;
 
     protected WebException(String code, String msg, List<?> dataList) {
         this.code = code;
@@ -45,6 +46,16 @@ public class WebException extends RuntimeException  {
     protected WebException() {
         this.code = ExceptionStates.SYSTEMERROR.getCode();
         this.msg = ExceptionStates.SYSTEMERROR.getMsg();
+    }
+
+    protected WebException(StatusCode statusCode) {
+        this.code = statusCode.getCode();
+        this.msg = statusCode.getMsg();
+    }
+
+    protected WebException(String code, String msg) {
+        this.code = code;
+        this.msg = msg;
     }
 
     public String getCode() {

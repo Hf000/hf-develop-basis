@@ -1,7 +1,10 @@
 package com.hufei.cp.response;
 
 import cn.hutool.core.date.DateUtil;
+import com.hufei.cfg.utils.RequestParamUtil;
 import com.hufei.cp.enums.ResponseStates;
+import com.hufei.cp.interfs.ResponseResult;
+import com.hufei.cp.interfs.StatusCode;
 
 import java.io.Serializable;
 
@@ -12,34 +15,38 @@ import java.io.Serializable;
  * @version 1.0.0
  * @date 2021/7/25 19:37
  */
-public class ResponseVO<T> implements Serializable {
+public class ResponseVO<T> implements ResponseResult<T>, Serializable {
 
     private static final long serialVersionUID = -2073005438844022460L;
 
-    private String responseCode;
-    private String responseMsg;
-    private String requestId;
-    private Long timestamp;
-    private T Data;
+    protected String responseCode;
+    protected String responseMsg;
+    protected String requestId;
+    protected Long timestamp;
+    protected T data;
 
     public ResponseVO() {
         this.setResponseCode(ResponseStates.SUCCESS.getCode());
         this.setResponseMsg(ResponseStates.SUCCESS.getMsg());
         this.setTimestamp(DateUtil.current());
+        this.setRequestId(RequestParamUtil.get());
     }
 
     public ResponseVO(String responseCode, String responseMsg) {
         this.setResponseCode(responseCode);
         this.setResponseMsg(responseMsg);
         this.setTimestamp(DateUtil.current());
+        this.setRequestId(RequestParamUtil.get());
     }
 
-    public ResponseVO(ResponseStates responseStates) {
-        this.setResponseCode(responseStates.getCode());
-        this.setResponseMsg(responseStates.getMsg());
+    public ResponseVO(StatusCode statusCode) {
+        this.setResponseCode(statusCode.getCode());
+        this.setResponseMsg(statusCode.getMsg());
         this.setTimestamp(DateUtil.current());
+        this.setRequestId(RequestParamUtil.get());
     }
 
+    @Override
     public String getResponseCode() {
         return responseCode;
     }
@@ -48,6 +55,7 @@ public class ResponseVO<T> implements Serializable {
         this.responseCode = responseCode;
     }
 
+    @Override
     public String getResponseMsg() {
         return responseMsg;
     }
@@ -65,13 +73,30 @@ public class ResponseVO<T> implements Serializable {
     }
 
     @Override
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    @Override
     public String toString() {
         return "ResponseVO{" +
                 "responseCode='" + responseCode + '\'' +
                 ", responseMsg='" + responseMsg + '\'' +
                 ", requestId='" + requestId + '\'' +
                 ", timestamp=" + timestamp +
-                ", Data=" + Data +
+                ", data=" + data +
                 '}';
     }
 }
