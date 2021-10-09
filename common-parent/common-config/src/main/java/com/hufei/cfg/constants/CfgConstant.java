@@ -11,6 +11,4 @@ public interface CfgConstant {
 
     String REQUEST_ID = "requestId";
 
-    double ONE_THOUSAND = 1000.0;
-
 }

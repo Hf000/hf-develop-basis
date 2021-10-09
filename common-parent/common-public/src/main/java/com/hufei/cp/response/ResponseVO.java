@@ -1,10 +1,10 @@
 package com.hufei.cp.response;
 
 import cn.hutool.core.date.DateUtil;
-import com.hufei.cfg.utils.RequestParamUtil;
 import com.hufei.cp.enums.ResponseStates;
 import com.hufei.cp.interfs.ResponseResult;
 import com.hufei.cp.interfs.StatusCode;
+import com.hufei.cp.utils.RequestParamUtil;
 
 import java.io.Serializable;
 

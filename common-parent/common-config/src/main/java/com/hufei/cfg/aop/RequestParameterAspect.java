@@ -1,8 +1,8 @@
 package com.hufei.cfg.aop;
 
 import com.hufei.cfg.constants.CfgConstant;
-import com.hufei.cfg.utils.RequestParamUtil;
-import com.hufei.cfg.utils.TimeUtil;
+import com.hufei.cp.utils.TimeUtil;
+import com.hufei.cp.utils.RequestParamUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;

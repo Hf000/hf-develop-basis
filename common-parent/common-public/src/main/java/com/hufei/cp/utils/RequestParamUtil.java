@@ -1,4 +1,4 @@
-package com.hufei.cfg.utils;
+package com.hufei.cp.utils;
 
 /**
  * <p> 请求参数处理 </p>

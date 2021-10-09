@@ -26,7 +26,7 @@
 
         <dependency>
             <groupId>com.hufei</groupId>
-            <artifactId>unified-exception-handle</artifactId>
+            <artifactId>common-config</artifactId>
             <version>${base-project.version}</version>
         </dependency>
 

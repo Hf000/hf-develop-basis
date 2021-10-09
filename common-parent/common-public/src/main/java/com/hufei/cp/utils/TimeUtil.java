@@ -1,7 +1,7 @@
-package com.hufei.cfg.utils;
+package com.hufei.cp.utils;
 
 import cn.hutool.core.date.DateUtil;
-import com.hufei.cfg.constants.CfgConstant;
+import com.hufei.cp.constants.CpConstant;
 
 /**
  * <p> 计算时间工具类 </p>
@@ -33,7 +33,7 @@ public class TimeUtil {
     }
 
     public String getDeltaSecondText() {
-        return getDeltaTime() / CfgConstant.ONE_THOUSAND + "s";
+        return getDeltaTime() / CpConstant.ONE_THOUSAND + "s";
     }
 
 }

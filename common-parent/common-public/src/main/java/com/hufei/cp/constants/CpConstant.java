@@ -13,4 +13,8 @@ public interface CpConstant {
 
     int NUMBER_128 = 128;
 
+    double ONE_THOUSAND = 1000.0;
+
+    String REQUEST_ID = "requestId";
+
 }

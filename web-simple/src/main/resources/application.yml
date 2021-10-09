@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: ws        # 配置服务对外名称
-
-logging:      #配置日志的记录级别
-  level:      #日志等级配置项
-    com.hufei: info      #表示以com.hufei开头的类的日志记录级别是info
-    org.springframework: error     #表示以org.springframework开头的类的日志记录级别是error
-

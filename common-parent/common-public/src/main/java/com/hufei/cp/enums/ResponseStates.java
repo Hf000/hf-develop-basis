@@ -22,8 +22,8 @@ public enum ResponseStates implements StatusCode {
         this.msg = msg;
     }
 
-    private String code;
-    private String msg;
+    private final String code;
+    private final String msg;
 
     @Override
     public String getCode() {
