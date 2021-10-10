@@ -33,6 +33,10 @@
             <groupId>com.dangdang</groupId>
             <artifactId>elastic-job-lite-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+        </dependency>
     </dependencies>
 
 

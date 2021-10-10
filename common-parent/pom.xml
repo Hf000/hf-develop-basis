@@ -25,6 +25,7 @@
         <hutool.version>5.7.5</hutool.version>
         <json-lib.version>2.4</json-lib.version>
         <elastic-job.version>2.1.5</elastic-job.version>
+        <reflections.version>0.10</reflections.version>
     </properties>
 
     <dependencyManagement>
@@ -63,6 +64,12 @@
                 <groupId>com.dangdang</groupId>
                 <artifactId>elastic-job-lite-core</artifactId>
                 <version>${elastic-job.version}</version>
+            </dependency>
+            <!-- 反射 -->
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>${reflections.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

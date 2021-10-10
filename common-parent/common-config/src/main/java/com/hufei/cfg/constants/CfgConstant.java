@@ -11,4 +11,6 @@ public interface CfgConstant {
 
     String REQUEST_ID = "requestId";
 
+    String NULL_STRING = "null";
+
 }

@@ -3,8 +3,10 @@ package com.hufei.ws.controller;
 import com.hufei.cp.enums.ResponseStates;
 import com.hufei.cp.response.ResponseVO;
 import com.hufei.cp.utils.ResponseUtil;
+import com.hufei.ss.service.HtTestService;
 import com.hufei.ws.exception.CustomException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -18,6 +20,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("exception")
 public class HfTestController {
+
+    @Autowired
+    private HtTestService htTestService;
 
     @GetMapping("test")
     public ResponseVO<Void> test(@RequestParam("number") Integer number) throws Exception {
@@ -36,6 +41,12 @@ public class HfTestController {
         } else if (number == 2) {
             throw new CustomException(ResponseStates.FAIL);
         }
+        return ResponseUtil.success();
+    }
+
+    @GetMapping("testB")
+    public ResponseVO<Void> testB(Integer number, String age) {
+        htTestService.testMethod();
         return ResponseUtil.success();
     }
 
