@@ -34,7 +34,7 @@ public class HfTestController {
         return ResponseUtil.success();
     }
 
-    @PostMapping("hf")
+    @PostMapping("testA")
     public ResponseVO<Void> testA(Integer number, String age) throws Exception {
         if (number == 1) {
             throw new Exception();
@@ -47,7 +47,11 @@ public class HfTestController {
     @GetMapping("testB")
     public ResponseVO<Void> testB(Integer number, String age) {
         htTestService.testMethod();
+        SpringBeanTest test = new SpringBeanTest();
+        test.test();
         return ResponseUtil.success();
     }
+
+
 
 }
