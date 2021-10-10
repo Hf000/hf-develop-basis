@@ -16,6 +16,7 @@
         <module>mybatis-parent</module>
         <module>common-parent</module>
         <module>web-simple</module>
+        <module>service-simple</module>
     </modules>
 
     <!--依赖springboot父工程信息-->

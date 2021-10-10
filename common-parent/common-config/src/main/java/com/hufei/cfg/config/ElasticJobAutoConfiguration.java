@@ -57,7 +57,7 @@ public class ElasticJobAutoConfiguration {
                 zookeeperConfiguration.setMaxSleepTimeMilliseconds(elasticJobProperties.getMaxSleepTimeMilliseconds());
                 zookeeperConfiguration.setMaxRetries(elasticJobProperties.getMaxRetries());
             }
-            // 初始注册中心
+            // 初始注册中心,建立连接
             ZookeeperRegistryCenter zookeeperRegistryCenter = new ZookeeperRegistryCenter(zookeeperConfiguration);
             zookeeperRegistryCenter.init();
             // 获取spring容器中的任务类

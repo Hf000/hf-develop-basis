@@ -1,4 +1,4 @@
-package com.hufei.ws.service;
+package com.hufei.ss.task;
 
 import cn.hutool.core.date.DateUtil;
 import com.dangdang.ddframe.job.api.ShardingContext;
@@ -19,7 +19,7 @@ import java.util.Date;
 @Slf4j
 @Component
 @ElasticSimpleJob(cron = "${ej.cron}")
-public class ElasticJobServiceImpl implements SimpleJob {
+public class ElasticJobTask implements SimpleJob {
     @Override
     public void execute(ShardingContext shardingContext) {
         log.info("定时任务测试===>{}", DateUtil.format(new Date(), "yyyy-MM-dd HH:mm:ss"));

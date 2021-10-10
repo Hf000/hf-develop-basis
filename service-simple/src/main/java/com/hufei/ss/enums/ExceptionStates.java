@@ -1,9 +1,9 @@
-package com.hufei.cfg.enums;
+package com.hufei.ss.enums;
 
 import com.hufei.cp.interfs.StatusCode;
 
 /**
- * <p> 响应枚举类 </p>
+ * <p> 异常响应枚举类 </p>
  *
  * @author hufei
  * @version 1.0.0
@@ -13,7 +13,8 @@ public enum ExceptionStates implements StatusCode {
     /**
      * 响应枚举类
      */
-    CRON_ERROR("400001","cron表达式异常"),
+    EXECUTE_JOB_ERROR("400001","该定时任务不存在"),
+    JOB_CRON_ERROR("400002","定时任务表达式格式不正确"),
     ;
 
     ExceptionStates(String code, String msg) {

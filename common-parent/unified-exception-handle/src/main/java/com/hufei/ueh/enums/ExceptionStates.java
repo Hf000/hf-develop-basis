@@ -20,7 +20,7 @@ public enum ExceptionStates implements StatusCode {
     private final String code;
     private final String msg;
 
-    private ExceptionStates(String code, String msg) {
+    ExceptionStates(String code, String msg) {
         this.code = code;
         this.msg = msg;
     }
