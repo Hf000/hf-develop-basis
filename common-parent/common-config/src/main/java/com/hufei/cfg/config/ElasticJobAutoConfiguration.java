@@ -8,6 +8,9 @@ import com.dangdang.ddframe.job.lite.spring.api.SpringJobScheduler;
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperConfiguration;
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenter;
 import com.hufei.cfg.annotation.ElasticSimpleJob;
+import com.hufei.cfg.enums.ExceptionStates;
+import com.hufei.cfg.exception.ElasticJobException;
+import com.hufei.cp.utils.ElUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,11 +70,19 @@ public class ElasticJobAutoConfiguration {
                 Optional.ofNullable(elasticSimpleJob).ifPresent(element ->{
                     log.info("获取添加了ElasticSimpleJob注解的bean ===> {}", simpleJob.getClass().getName());
                     String cron = StringUtils.defaultIfBlank(elasticSimpleJob.cron(), elasticSimpleJob.value());
-                    // 使用spring环境properties解析后的上下文对象environment获取cron表达式对应的值
-                    String cronValue = environment.resolvePlaceholders(cron);
+                    // 判断是否是el表达式还是cron表达式
+                    if (ElUtil.judgmentEl(cron)) {
+                        // 使用spring环境properties解析后的上下文对象environment获取cron表达式对应的值
+                        cron = environment.resolvePlaceholders(cron);
+                    } else {
+                        cron = ElUtil.replaceEl(cron);
+                    }
+                    if (StringUtils.isBlank(cron)) {
+                        throw new ElasticJobException(ExceptionStates.CRON_ERROR);
+                    }
                     String jobName = StringUtils.defaultIfBlank(elasticSimpleJob.jobName(), simpleJob.getClass().getName());
                     // 设置定时任务配置项
-                    SimpleJobConfiguration simpleJobConfiguration = new SimpleJobConfiguration(JobCoreConfiguration.newBuilder(jobName, cronValue, elasticSimpleJob.shardingTotalCount())
+                    SimpleJobConfiguration simpleJobConfiguration = new SimpleJobConfiguration(JobCoreConfiguration.newBuilder(jobName, cron, elasticSimpleJob.shardingTotalCount())
                             .shardingItemParameters(elasticSimpleJob.shardingItemParameters()).jobParameter(elasticSimpleJob.jobParameter()).description(elasticSimpleJob.description())
                             .failover(elasticSimpleJob.failover()).build(), simpleJob.getClass().getCanonicalName());
                     LiteJobConfiguration liteJobConfiguration = LiteJobConfiguration.newBuilder(simpleJobConfiguration).overwrite(elasticSimpleJob.overwrite()).disabled(elasticSimpleJob.disabled())

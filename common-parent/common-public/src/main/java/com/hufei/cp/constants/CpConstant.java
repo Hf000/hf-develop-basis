@@ -17,4 +17,12 @@ public interface CpConstant {
 
     String REQUEST_ID = "requestId";
 
+    String BEFORE_BIG_PARANTHESES = "{";
+
+    String AFTER_BIG_PARANTHESES = "}";
+
+    String DOLLAR_SIGN = "$";
+
+    String DOLLAR_SIGN_BEFORE_BIG_PARANTHESES = DOLLAR_SIGN + BEFORE_BIG_PARANTHESES;
+
 }
