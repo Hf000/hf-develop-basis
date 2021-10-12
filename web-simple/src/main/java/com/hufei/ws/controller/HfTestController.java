@@ -1,7 +1,10 @@
 package com.hufei.ws.controller;
 
+import com.hufei.cfg.annotation.CustomParamAnnotation;
+import com.hufei.cfg.annotation.CustomParamsAnnotation;
 import com.hufei.cp.enums.ResponseStates;
 import com.hufei.cp.response.ResponseVO;
+import com.hufei.cp.utils.ExpressionResolverUtil;
 import com.hufei.cp.utils.ResponseUtil;
 import com.hufei.ss.service.HtTestService;
 import com.hufei.ws.exception.CustomException;
@@ -18,14 +21,14 @@ import org.springframework.web.bind.annotation.*;
  */
 @Slf4j
 @RestController
-@RequestMapping("exception")
+@RequestMapping("test")
 public class HfTestController {
 
     @Autowired
     private HtTestService htTestService;
 
-    @GetMapping("test")
-    public ResponseVO<Void> test(@RequestParam("number") Integer number) throws Exception {
+    @GetMapping("testA")
+    public ResponseVO<Void> testA(@RequestParam("number") Integer number) throws Exception {
         if (number == 1) {
             throw new Exception();
         } else if (number == 2) {
@@ -34,8 +37,8 @@ public class HfTestController {
         return ResponseUtil.success();
     }
 
-    @PostMapping("testA")
-    public ResponseVO<Void> testA(Integer number, String age) throws Exception {
+    @PostMapping("testB")
+    public ResponseVO<Void> testB(Integer number, String age) throws Exception {
         if (number == 1) {
             throw new Exception();
         } else if (number == 2) {
@@ -44,14 +47,37 @@ public class HfTestController {
         return ResponseUtil.success();
     }
 
-    @GetMapping("testB")
-    public ResponseVO<Void> testB(Integer number, String age) {
+    @GetMapping("testC")
+    public ResponseVO<Void> testC(Integer number, String age) {
         htTestService.testMethod();
         SpringBeanTest test = new SpringBeanTest();
         test.test();
         return ResponseUtil.success();
     }
 
+    @GetMapping("testD")
+    public ResponseVO<String> testD() {
+        String propertiesValue = "";
+        // 解析properties配置文件获取key对应的值
+//        propertiesValue = PropertiesUtil.init().getPropertiesValue("ej.cron");
+        // 使用ExpressionResolverUtil解析表达式
+        Object object = ExpressionResolverUtil.expressionAnalysis("${ej.cron}");
+        if (object != null) {
+            propertiesValue = object.toString();
+        }
+        return ResponseUtil.success(propertiesValue);
+    }
 
+    @GetMapping("testE")
+    @CustomParamsAnnotation(value = {"#a", "#b"})
+    public ResponseVO<Void> testE(@RequestParam("a") String a, @RequestParam("b") String b) {
+        return ResponseUtil.success();
+    }
+
+    @GetMapping("testF")
+    @CustomParamAnnotation(value = "#a")
+    public ResponseVO<Void> testF(@RequestParam("a") String a) {
+        return ResponseUtil.success();
+    }
 
 }

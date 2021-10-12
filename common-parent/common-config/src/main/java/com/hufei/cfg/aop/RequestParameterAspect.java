@@ -58,6 +58,7 @@ public class RequestParameterAspect {
             // 其他请求处理
         }
         RequestParamUtil.resetRequestId(requestId);
+        // TODO 此方法内可以根据具体的业务场景进行应用, 例如添加接口的凭证校验...
         // 计算当前方法耗时
         TimeUtil timeUtil = new TimeUtil();
         // 执行方法
