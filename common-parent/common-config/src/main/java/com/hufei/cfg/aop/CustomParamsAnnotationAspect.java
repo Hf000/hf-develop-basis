@@ -7,7 +7,6 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.LocalVariableTableParameterNameDiscoverer;
 import org.springframework.expression.ExpressionParser;
@@ -33,9 +32,9 @@ public class CustomParamsAnnotationAspect {
      * 切面方法
      * @param customParamsAnnotation 自定义注解
      */
-    @Pointcut(value = "@annotation(customParamsAnnotation)")
+    /*@Pointcut(value = "@annotation(customParamsAnnotation)")
     public void pointcut(CustomParamsAnnotation customParamsAnnotation) {
-    }
+    }*/
 
     /**
      * 设置切面为加有注解的方法
@@ -56,6 +55,7 @@ public class CustomParamsAnnotationAspect {
      */
     @AfterThrowing(pointcut = "@annotation(customParamsAnnotation)", throwing = "error")
     public void afterThrowing(Throwable error, CustomParamsAnnotation customParamsAnnotation) {
+        // 当添加注解@CustomParamsAnnotation的方法处理业务异常时会经过这里处理
         log.error("注解@CustomParamsAnnotation, AOP处理异常:{}", error.getMessage());
     }
 

@@ -27,7 +27,7 @@ import java.lang.reflect.Method;
 @Component
 public class CustomParamAnnotationAspect {
 
-    private ExpressionEvaluator<String> evaluator = new ExpressionEvaluator<>();
+    private final ExpressionEvaluator<String> evaluator = new ExpressionEvaluator<>();
 
     /**
      * 切面方法
@@ -46,6 +46,7 @@ public class CustomParamAnnotationAspect {
 
     @AfterThrowing(value = "pointcut()", throwing = "throwable")
     public void doThrowing(JoinPoint joinPoint, Throwable throwable) {
+        // 当添加注解@CustomParamAnnotation的方法处理业务异常时会经过这里处理
         log.error("@CustomParamAnnotation注解AOP异常", throwable);
     }
 
