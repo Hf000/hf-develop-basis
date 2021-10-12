@@ -12,3 +12,9 @@ personal study
         1> 引入common-config依赖
         2> 创建需要替换接口的实现类, 添加@CustomBeanReplace(value="被替换bean的名称")
         3> 在application.properties文件中配置replaceBean.scannerPackages替换扫描包配置项
+# 4. 自定义@EventListenerAnnotation事件注解, 可同步进行事件的发布和监听
+    使用方法:
+        1> 引入common-config依赖
+        2> 创建事件实体, 继承EventBaseAbstract或者实现EventBase
+        3> 创建事件监听器处理类添加@EventListenerAnnotation, 继承EventListenerAbstract<第二步创建的事件实体>或者实现EventListener<第二步创建的事件实体>
+        4> 在需要的bean中注入EventPublisher对象, 进行事件发布
