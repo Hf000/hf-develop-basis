@@ -18,3 +18,8 @@ personal study
         2> 创建事件实体, 继承EventBaseAbstract或者实现EventBase
         3> 创建事件监听器处理类添加@EventListenerAnnotation, 继承EventListenerAbstract<第二步创建的事件实体>或者实现EventListener<第二步创建的事件实体>
         4> 在需要的bean中注入EventPublisher对象, 进行事件发布
+# 5. 自定义注解@JavaEnum枚举注解, 可以根据枚举类group获取所有枚举项
+    使用方法:
+        1> 引入common-config依赖
+        2> 创建枚举类, 添加@JavaEnum("枚举group")注解, 实现NameValueEnum或其子接口
+        3> 普通使用, NameValueEnum.getEnum(枚举类.class, value)方式获取获取项对应枚举项, 其他使用方法见NameValueEnum
