@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.pagehelper.PageInfo;
 import com.hufei.mpsb.pojo.po.User;
 
+import java.util.List;
+
 /**
  * <p> user信息查询 </p>
  *
@@ -16,4 +18,6 @@ public interface UserService extends IService<User> {
     User findById(long id);
 
     PageInfo<User> findListUser();
+
+    List<User> findAll();
 }
