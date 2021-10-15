@@ -24,3 +24,5 @@ personal study
            根据实际情况输入: tb_user
            请输入表前缀：
            根据实际情况输入: tb_
+# 3. 整合druid
+# 4. 整合pageHelper
