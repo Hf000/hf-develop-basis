@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 <#if superControllerClassPackage??>
 import ${superControllerClassPackage};
 </#if>
+import org.springframework.beans.factory.annotation.Autowired;
+import ${package.Service}.${table.serviceName};
 
 /**
  * <p>
@@ -29,9 +31,13 @@ class ${table.controllerName}<#if superControllerClass??> : ${superControllerCla
 <#else>
 <#if superControllerClass??>
 public class ${table.controllerName} extends ${superControllerClass} {
+
 <#else>
 public class ${table.controllerName} {
 </#if>
+
+    @Autowired
+    private ${table.serviceName} ${table.entityPath}Service;
 
 }
 </#if>

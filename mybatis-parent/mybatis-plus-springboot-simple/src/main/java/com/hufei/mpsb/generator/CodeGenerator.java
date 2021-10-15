@@ -50,22 +50,34 @@ public class CodeGenerator {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         // 获取系统变量, 来获得项目路径
-//        String projectPath = System.getProperty("user.dir");
         String projectPath = scanner("模块磁盘路径");
+        // 数据库连接密码
         String dbPassword = scanner("数据库连接密码");
+        // 文件输出路径
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor(scanner("author信息"));
+        // 是否打开输出目录
         gc.setOpen(false);
+        //是否重写
+//        gc.setFileOverride(true);
+        // 开启activeRecord模式
+//        gc.setActiveRecord(true);
+        // xml开启二级缓存
+//        gc.setEnableCache(false);
+        // 设置service文件后缀名
         gc.setServiceName("%sService");
-        gc.setMapperName("%sDao");
+        // 设置Mapper接口文件后缀名
+        gc.setMapperName("%sMapper");
+        // mapper.xml文件字段配置 通用查询结果列
         gc.setBaseColumnList(true);
+        // mapper.xml文件ResultMap配置 通用查询映射结果
         gc.setBaseResultMap(true);
         // gc.setSwagger2(true); 实体属性 Swagger2 注解
         mpg.setGlobalConfig(gc);
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setUrl(DB_URL);
-        // 有些数据库才需要,PostgreSql
+        // 有些数据库才需要模式名称, 例如:PostgreSql
 //        dsc.setSchemaName(DB_SCHEMA_NAME);
         dsc.setDriverName(DB_DRIVER_NAME);
         dsc.setUsername(DB_USERNAME);
@@ -128,33 +140,47 @@ public class CodeGenerator {
                 return true;
             }
         });*/
+        // 如果这里配置了mapper.xml文件的自定义输出, 那么下面配置不生成xml则不生效
         cfg.setFileOutConfigList(focList);
         mpg.setCfg(cfg);
         // 配置模板
         TemplateConfig templateConfig = new TemplateConfig();
         // 配置自定义输出模板
-        //指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别
-//        templateConfig.setEntity("templates/entity2.java");
-//        templateConfig.setService();
-        templateConfig.setController("");
-        templateConfig.setXml(null);
+        //指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别, 如果不配置则按照默认模板文件生成
+//        templateConfig.setEntity("templates/entity.java");
+        // 设置为null时, 则不会生成xml文件, controller,service,mapper,entity等java类
+//        templateConfig.setController(null);
+//        templateConfig.setService(null);
+//        templateConfig.setServiceImpl(null);
+//        templateConfig.setMapper(null);
+//        templateConfig.setEntity(null);
+        // 如果上面focList配置了mapper.xml的自定义输出, 那么这里即使设置成null, 也会生成xml文件
+//        templateConfig.setXml(null);
         mpg.setTemplate(templateConfig);
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
+        // 表名生成策略: 下划线连转驼峰
         strategy.setNaming(NamingStrategy.underline_to_camel);
+        // 表字段生成策略: 下划线连转驼峰
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
+        // 是否为lombok模型, 需要依赖lombok
         strategy.setEntityLombokModel(true);
+        // 生成Controller
         strategy.setRestControllerStyle(true);
-        // 公共父类
-        strategy.setSuperControllerClass("");
-        // 写于父类中的公共字段
+        // controller映射地址url中驼峰转连字符
+//        strategy.setControllerMappingHyphenStyle(true);
+        // controller继承公共父类
+//        strategy.setSuperControllerClass("");
+        // entity继承公共父类
         strategy.setSuperEntityClass(SUPER_ENTITY_CLASS);
+        // 写于父类中的公共字段
         strategy.setSuperEntityColumns(SUPER_ENTITY_COLUMNS);
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
-        strategy.setControllerMappingHyphenStyle(true);
-//        strategy.setTablePrefix(pc.getModuleName() + "_");
+        // 表名前缀
         strategy.setTablePrefix(scanner("表前缀"));
+        // 表的逻辑删除字段
         strategy.setLogicDeleteFieldName("is_deleted");
+        // 设置表基础更新字段
         TableFill createdDate = new TableFill("created_date", FieldFill.INSERT);
         TableFill updatedDate = new TableFill("updated_date", FieldFill.INSERT_UPDATE);
         List<TableFill> tableFills = new ArrayList<>();
