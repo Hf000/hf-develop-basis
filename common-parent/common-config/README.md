@@ -1,6 +1,7 @@
 # common-config
 personal study
 
+# 注意: 引入common-config依赖的时候, 检查web工程的启动类路径是否是此工程类路径的父级或者同级
 # 1. 请求参数增强的统一处理 RequestParameterAspect
 # 2. 封装elasticJob定时任务, 采用注解方式（注解：@ElasticSimpleJob）实现定时任务处理并兼容xml方式
     使用方法:
@@ -23,3 +24,7 @@ personal study
         1> 引入common-config依赖
         2> 创建枚举类, 添加@JavaEnum("枚举group")注解, 实现NameValueEnum或其子接口
         3> 普通使用, NameValueEnum.getEnum(枚举类.class, value)方式获取获取项对应枚举项, 其他使用方法见NameValueEnum
+# 6. 自定义注解@MybatisPagination, 可以直接采用PageHelper分页
+    使用方法: 
+        1> 引入common-config依赖
+        2> 在Controller或者service层方法上添加@MybatisPagination

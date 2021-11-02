@@ -10,7 +10,7 @@ import java.util.List;
  * @version 1.0.0
  * @date 2021/10/9 12:23
  */
-public class ListUtils {
+public class TypeConvertUtils {
 
     /**
      * 将Object对象转换成存储对应类型的List
@@ -34,6 +34,22 @@ public class ListUtils {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /**
+     * 将Object转换成指定类型
+     * @param object 需要转换的对象
+     * @param clazz 指定类型
+     * @param <T> 返回类型声明
+     * @return 返回声明类型对象
+     */
+    public static <T> T castObject(Object object, Class<T> clazz) {
+        // 判断该对象能不能转换成这个类型
+        if (clazz.isInstance(object)) {
+            // 将该对象转换成指定的类型
+            return clazz.cast(object);
+        }
+        throw new RuntimeException("can not cast " + object.getClass().getName() + " to " + clazz.getName());
     }
 
 }

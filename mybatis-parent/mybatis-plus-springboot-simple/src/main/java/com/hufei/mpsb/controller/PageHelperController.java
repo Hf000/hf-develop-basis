@@ -2,16 +2,14 @@ package com.hufei.mpsb.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.hufei.cfg.annotation.MybatisPagination;
 import com.hufei.cp.response.ResponseVO;
 import com.hufei.cp.utils.ResponseUtil;
 import com.hufei.mpsb.pojo.po.User;
 import com.hufei.mpsb.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -61,6 +59,13 @@ public class PageHelperController {
     public ResponseVO<Void> test(@RequestParam("file") String file, @RequestParam("filename") String fileName) {
         log.info("接收到的参数===>file:{}, filename:{}", file, fileName);
         return ResponseUtil.success();
+    }
+
+    @GetMapping("test/page")
+    @MybatisPagination
+    public Object testPaginationAnnotation(@RequestParam("pageNo") String pageNo, @RequestParam("pageSize") String pageSize) {
+        log.info("接收到的参数===>pageNo:{}, pageSize:{}", pageNo, pageSize);
+        return userService.findAll();
     }
 
 }

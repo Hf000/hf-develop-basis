@@ -26,6 +26,7 @@
         <json-lib.version>2.4</json-lib.version>
         <elastic-job.version>2.1.5</elastic-job.version>
         <reflections.version>0.10</reflections.version>
+        <pagehelper-spring-boot-starter.version>1.4.0</pagehelper-spring-boot-starter.version>
     </properties>
 
     <dependencyManagement>
@@ -70,6 +71,11 @@
                 <groupId>org.reflections</groupId>
                 <artifactId>reflections</artifactId>
                 <version>${reflections.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-spring-boot-starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

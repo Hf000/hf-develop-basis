@@ -14,10 +14,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SpringBeanTest {
 
-    private HtTestService htTestService3 = (HtTestService) SpringBeanUtil.getBean("htTestServiceImpl");
+    private final HtTestService htTestService3 = (HtTestService) SpringBeanUtil.getBean("htTestServiceImpl");
 
     public void test() {
         log.info("测试SpringBeanUtil");
+        assert htTestService3 != null;
         htTestService3.testMethod();
     }
 
