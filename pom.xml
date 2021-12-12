@@ -17,6 +17,7 @@
         <module>common-parent</module>
         <module>web-simple</module>
         <module>service-simple</module>
+        <module>demo-parent</module>
     </modules>
 
     <!--依赖springboot父工程信息-->
