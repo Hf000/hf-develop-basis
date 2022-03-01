@@ -2,25 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <!--工程pom模型版本-->
-    <modelVersion>4.0.0</modelVersion>
 
-    <!--工程信息-->
-    <groupId>com.hufei</groupId>
-    <artifactId>hf-develop-basis</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-
-    <!--子模块信息-->
-    <modules>
-        <module>mybatis-parent</module>
-        <module>common-parent</module>
-        <module>web-simple</module>
-        <module>service-simple</module>
-        <module>demo-parent</module>
-    </modules>
-
+    <!-- 聚合工程 -->
     <!--依赖springboot父工程信息-->
+    <!--spring-boot-starter-parent是一个springboot项目的父工程，它定义了很多当前项目的规范
+    1.定义了 Java 编译版本为 1.8 。
+    2.使用 UTF-8 格式编码。
+    3.继承自 spring-boot-dependencies，这个里边定义了依赖的版本，也正是因为继承了这个依赖，所以我们在写依赖时才
+    不需要写版本号。
+    4.执行打包操作的配置。
+    5.自动化的资源过滤。
+    6.自动化的插件配置。
+    7.针对 application.properties 和 application.yml 的资源过滤，包括通过 profile 定义的不同环境的配置文件-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -29,6 +22,24 @@
         <!--<relativePath/>-->
     </parent>
 
+    <!--工程pom模型版本-->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--工程信息-->
+    <groupId>com.hufei</groupId>
+    <artifactId>hf-develop-basis</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <!--子模块信息-->
+    <modules>
+        <module>common-parent</module>
+        <module>mybatis-parent</module>
+        <module>demo-parent</module>
+        <module>develop-parent</module>
+    </modules>
+
+    <!-- 工程版本号 -->
     <properties>
         <base-project.version>1.0-SNAPSHOT</base-project.version>
     </properties>

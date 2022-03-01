@@ -77,7 +77,6 @@
         <dependency>
             <groupId>com.hufei</groupId>
             <artifactId>common-config</artifactId>
-            <version>${base-project.version}</version>
         </dependency>
     </dependencies>
 

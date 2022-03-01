@@ -1,7 +1,5 @@
 package com.hufei.designpatterns;
 
-import com.hufei.designpatterns.singleton.SingleModel;
-
 /**
  * <p> 设计模式测试类 </p>
  *

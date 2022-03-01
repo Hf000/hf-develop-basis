@@ -1,7 +1,7 @@
-package com.hufei.designpatterns.singleton;
+package com.hufei.designpatterns;
 
 /**
- * <p> 单例模式 </p>
+ * <p> 单例模式-通过静态方法获取该对象的唯一实例, 不允许new该对象 </p>
  *
  * @author hufei
  * @version 1.0.0
@@ -15,7 +15,7 @@ public class SingleModel {
     private static volatile SingleModel singleModel = null;
 
     /**
-     * 私有化构造
+     * 私有化构造, 不能通过new创建对象
      */
     private SingleModel() {}
 
@@ -26,7 +26,7 @@ public class SingleModel {
     public static SingleModel getInstance() {
         //判空处理，保证唯一, 防止多线程阻塞, 影响系统性能
         if (null == singleModel) {
-            //加锁
+            //加锁, 防止多线程创建多个实例
             synchronized (SingleModel.class) {
                 //保证临界点的创建实例的唯一
                 if (null == singleModel) {
