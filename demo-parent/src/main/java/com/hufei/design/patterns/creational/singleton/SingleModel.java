@@ -1,8 +1,8 @@
-package com.hufei.designpatterns;
+package com.hufei.design.patterns.creational.singleton;
 
 /**
- * <p> 单例模式-通过静态方法获取该对象的唯一实例, 不允许new该对象 </p>
- *
+ * <p> 设计模式的三大类型: 创建型, 单例模式-通过静态方法获取该对象的唯一实例, 不允许new该对象 </p>
+ *  多重判空加锁
  * @author hufei
  * @version 1.0.0
  * @date 2021/11/15 21:40

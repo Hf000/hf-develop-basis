@@ -12,6 +12,11 @@
     <artifactId>demo-parent</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>com.hufei</groupId>
+            <artifactId>common-config</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 
