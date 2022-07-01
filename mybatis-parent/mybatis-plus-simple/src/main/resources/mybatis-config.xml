@@ -12,7 +12,7 @@
 
     <!--设置对应实体的别名-->
     <typeAliases>
-        <package name="com.hufei.mp.pojo.po"/>
+        <package name="com.hufei.mps.pojo.po"/>
     </typeAliases>
 
     <!--配置mybatis的连接池-->

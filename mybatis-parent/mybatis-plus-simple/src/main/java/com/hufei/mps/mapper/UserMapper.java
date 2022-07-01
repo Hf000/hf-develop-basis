@@ -1,7 +1,7 @@
-package com.hufei.mp.mapper;
+package com.hufei.mps.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.hufei.mp.pojo.po.User;
+import com.hufei.mps.pojo.po.User;
 
 import java.util.List;
 

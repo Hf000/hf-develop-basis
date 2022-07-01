@@ -1,8 +1,8 @@
-package com.hufei.mp;
+package com.hufei.mps;
 
 import com.baomidou.mybatisplus.core.MybatisSqlSessionFactoryBuilder;
-import com.hufei.mp.mapper.UserMapper;
-import com.hufei.mp.pojo.po.User;
+import com.hufei.mps.mapper.UserMapper;
+import com.hufei.mps.pojo.po.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
