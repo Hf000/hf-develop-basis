@@ -31,6 +31,6 @@
 
     <!--配置mapper文件夹路径-->
     <mappers>
-        <mapper resource="mapper/mp/UserMapper.xml"/>
+        <mapper resource="mapper/mps/UserMapper.xml"/>
     </mappers>
 </configuration>

@@ -39,19 +39,19 @@
         <!--加载数据库连接信息-->
         <jdbcConnection driverClass="${jdbc.driverClassName}" connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}" />
         <!--生成数据库表对应实体的包路径-->
-        <javaModelGenerator targetPackage="com.hufei.mts.pojo.po" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.hufei.mtsbs.pojo.po" targetProject="src/main/java">
             <!--如果包不存在创建一个  -->
             <property name="enableSubPackages" value="true"/>
             <!--生成字符串类型去除空格-->
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!--生成数据库表对应mapper.xml文件路径-->
-        <sqlMapGenerator targetPackage="mapper/mts" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="mapper/mtsbs" targetProject="src/main/resources">
             <!--如果包不存在创建一个  -->
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!--生成数据库表对应通用mapper文件包路径-->
-        <javaClientGenerator targetPackage="com.hufei.mts.mapper" targetProject="src/main/java" type="XMLMAPPER">
+        <javaClientGenerator targetPackage="com.hufei.mtsbs.mapper" targetProject="src/main/java" type="XMLMAPPER">
             <!--如果包不存在创建一个  -->
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>

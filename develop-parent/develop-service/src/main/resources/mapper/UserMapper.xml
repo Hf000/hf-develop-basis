@@ -3,7 +3,7 @@
 <mapper namespace="com.hufei.hfTest.dao.UserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.hufei.ss.beans.entity.User">
+    <resultMap id="BaseResultMap" type="com.hufei.ds.beans.entity.User">
         <id column="id" property="id" />
         <result column="user_name" property="userName" />
         <result column="password" property="password" />

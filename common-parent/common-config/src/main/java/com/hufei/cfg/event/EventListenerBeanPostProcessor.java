@@ -1,6 +1,5 @@
 package com.hufei.cfg.event;
 
-import com.hufei.cfg.annotation.EventListenerAnnotation;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.config.DestructionAwareBeanPostProcessor;
