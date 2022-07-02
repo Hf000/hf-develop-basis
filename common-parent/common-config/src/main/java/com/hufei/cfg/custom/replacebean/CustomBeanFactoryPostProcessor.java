@@ -1,4 +1,4 @@
-package com.hufei.cfg.replacebean;
+package com.hufei.cfg.custom.replacebean;
 
 import cn.hutool.core.collection.CollectionUtil;
 import com.hufei.cfg.constants.CfgConstant;
@@ -18,7 +18,7 @@ import java.util.Set;
 
 /**
  * <p> 实现spring容器中的bean替换处理 </p>
- *
+ * 自定义spring容器中替换bean注解CustomBeanReplace实现 - 2
  * @author hufei
  * @version 1.0.0
  * @date 2021/10/10 13:16
