@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * <p> 事件发布器实现类 </p>
  * 如果没有默认逻辑, 可以直接实现EventPublisher接口
+ * 自定义事件分发器实现 - 11
  * @author hufei
  * @version 1.0.0
  * @date 2021/10/12 17:05

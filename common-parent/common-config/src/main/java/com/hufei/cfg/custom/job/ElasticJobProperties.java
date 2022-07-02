@@ -1,4 +1,4 @@
-package com.hufei.cfg.customjob;
+package com.hufei.cfg.custom.job;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * <p> elastic-job参数配置类 </p>
- *
+ * 自定义封装elastic-job实现 - 3
  * @author hufei
  * @version 1.0.0
  * @date 2021/10/9 21:32

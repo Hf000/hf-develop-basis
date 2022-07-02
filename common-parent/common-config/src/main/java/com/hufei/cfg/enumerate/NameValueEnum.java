@@ -6,7 +6,7 @@ import org.apache.commons.lang.StringUtils;
 /**
  * <p> 添加<code>@JsonFormat   @com.fasterxml.jackson.annotation.JsonFormat</code>
  * 可以解决Controller返回json串, 将枚举类作为一个对象来处理 </p>
- *
+ * 自定义枚举注解JavaEnum实现 - 3
  * @author hufei
  * @version 1.0.0
  * @date 2021/10/12 21:16

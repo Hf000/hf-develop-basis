@@ -1,7 +1,7 @@
 package com.hufei.dw.controller;
 
-import com.hufei.cfg.customel.CustomParamAnnotation;
-import com.hufei.cfg.customel.CustomParamsAnnotation;
+import com.hufei.cfg.custom.expression.CustomParamAnnotation;
+import com.hufei.cfg.custom.expression.CustomParamsAnnotation;
 import com.hufei.cp.enums.ResponseStates;
 import com.hufei.cp.response.ResponseVO;
 import com.hufei.cp.utils.ExpressionResolverUtil;

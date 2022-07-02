@@ -12,7 +12,7 @@ import java.util.Set;
 
 /**
  * <p> 事件分发器实现 </p>
- *
+ * 自定义事件分发器实现 - 8
  * @author hufei
  * @version 1.0.0
  * @date 2021/10/12 16:35

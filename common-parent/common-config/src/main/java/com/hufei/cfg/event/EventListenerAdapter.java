@@ -6,6 +6,7 @@ import org.springframework.core.ResolvableType;
 /**
  * <p> 事件监听适配器 </p>
  * 如果没有默认实现可以直接实现EventListener接口
+ * 自定义事件分发器实现 - 6
  * @author hufei
  * @version 1.0.0
  * @date 2021/10/12 15:47

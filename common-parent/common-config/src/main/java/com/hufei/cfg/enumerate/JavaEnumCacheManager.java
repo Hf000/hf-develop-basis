@@ -10,6 +10,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * <p> java枚举缓存管理类  用于缓存所有使用元注解@JavaEnum的枚举类 </p>
+ * 自定义枚举注解JavaEnum实现 - 2
  * {@link JavaEnum}
  * @author hufei
  * @version 1.0.0

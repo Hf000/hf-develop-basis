@@ -1,3 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.hufei.cfg.customjob.ElasticJobProperties,\
-  com.hufei.cfg.customjob.ElasticJobAutoConfiguration
+  com.hufei.cfg.custom.job.ElasticJobProperties,\
+  com.hufei.cfg.custom.job.ElasticJobAutoConfiguration

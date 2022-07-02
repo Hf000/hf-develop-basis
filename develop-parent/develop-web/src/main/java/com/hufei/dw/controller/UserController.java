@@ -1,6 +1,6 @@
 package com.hufei.dw.controller;
 
-import com.hufei.cfg.custompage.MybatisPagination;
+import com.hufei.cfg.custom.page.MybatisPagination;
 import com.hufei.ds.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,10 +1,10 @@
-package com.hufei.cfg.custompage;
+package com.hufei.cfg.custom.page;
 
 import java.lang.annotation.*;
 
 /**
  * <p> 自定义mybatis分页注解 </p>
- *
+ * 自定义分页注解MybatisPagination实现 - 1
  * @author hufei
  * @version 1.0.0
  * @date 2021/11/2 10:56

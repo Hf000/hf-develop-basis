@@ -1,4 +1,4 @@
-package com.hufei.cfg.customel;
+package com.hufei.cfg.custom.expression;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
 
 /**
  * <p> 自定义注解@CustomParamAnnotation切面处理 </p>
- *
+ * 注解CustomParamAnnotation实现 - 2
  * @author hufei
  * @version 1.0.0
  * @date 2021/10/12 13:44
@@ -30,7 +30,7 @@ public class CustomParamAnnotationAspect {
     /**
      * 切面方法
      */
-    @Pointcut(value = "@annotation(com.hufei.cfg.customel.CustomParamAnnotation)")
+    @Pointcut(value = "@annotation(com.hufei.cfg.custom.expression.CustomParamAnnotation)")
     public void pointcut() {
     }
 

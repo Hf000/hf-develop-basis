@@ -2,7 +2,7 @@ package com.hufei.mpsbs.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.hufei.cfg.custompage.MybatisPagination;
+import com.hufei.cfg.custom.page.MybatisPagination;
 import com.hufei.cp.response.ResponseVO;
 import com.hufei.cp.utils.ResponseUtil;
 import com.hufei.mpsbs.pojo.po.User;

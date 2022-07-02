@@ -1,4 +1,4 @@
-package com.hufei.cfg.custompage;
+package com.hufei.cfg.custom.page;
 
 import cn.hutool.core.collection.CollectionUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,7 +27,7 @@ import java.util.Map;
 
 /**
  * <p> 自定义mybatis分页注解的aop处理 </p>
- *
+ * 自定义分页注解MybatisPagination实现 - 2
  * @author hufei
  * @version 1.0.0
  * @date 2021/11/2 11:02
@@ -37,7 +37,7 @@ import java.util.Map;
 @Component
 public class MybatisPaginationAspect {
 
-    @Pointcut(value = "@annotation(com.hufei.cfg.custompage.MybatisPagination)")
+    @Pointcut(value = "@annotation(com.hufei.cfg.custom.page.MybatisPagination)")
     public void assess() {}
 
     /**

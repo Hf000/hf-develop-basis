@@ -1,4 +1,4 @@
-package com.hufei.cfg.customjob;
+package com.hufei.cfg.custom.job;
 
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
 import com.dangdang.ddframe.job.config.JobCoreConfiguration;
@@ -8,7 +8,6 @@ import com.dangdang.ddframe.job.lite.spring.api.SpringJobScheduler;
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperConfiguration;
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenter;
 import com.hufei.cfg.enums.ExceptionStates;
-import com.hufei.cfg.exception.ElasticJobException;
 import com.hufei.cp.utils.ElUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -23,7 +22,7 @@ import java.util.Optional;
 
 /**
  * <p> elastic-job初始化处理 </p>
- *
+ * 自定义封装elastic-job实现 - 2
  * @author hufei
  * @version 1.0.0
  * @date 2021/10/9 21:29

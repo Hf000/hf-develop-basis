@@ -1,4 +1,4 @@
-package com.hufei.cfg.customjob;
+package com.hufei.cfg.custom.job;
 
 import org.springframework.core.annotation.AliasFor;
 
@@ -6,7 +6,7 @@ import java.lang.annotation.*;
 
 /**
  * <p> elastic-job作业类注解 </p>
- *
+ * 自定义封装elastic-job实现 - 1
  * @author hufei
  * @version 1.0.0
  * @date 2021/10/9 15:29

@@ -3,7 +3,7 @@ package com.hufei.ds.task;
 import cn.hutool.core.date.DateUtil;
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
-import com.hufei.cfg.customjob.ElasticSimpleJob;
+import com.hufei.cfg.custom.job.ElasticSimpleJob;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

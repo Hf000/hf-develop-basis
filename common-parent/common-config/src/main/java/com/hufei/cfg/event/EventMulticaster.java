@@ -2,7 +2,7 @@ package com.hufei.cfg.event;
 
 /**
  * <p> 事件分发器接口 </p>
- *
+ * 自定义事件分发器实现 - 7
  * @author hufei
  * @version 1.0.0
  * @date 2021/10/12 16:11

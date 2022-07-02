@@ -13,7 +13,7 @@ import java.util.Set;
 
 /**
  * <p> java枚举扫描器, 用于查找符合条件的java枚举类 </p>
- *
+ * 自定义枚举注解JavaEnum实现 - 4
  * @author hufei
  * @version 1.0.0
  * @date 2021/10/14 9:42

@@ -1,6 +1,6 @@
 package com.hufei.ds.service.impl;
 
-import com.hufei.cfg.replacebean.CustomBeanReplace;
+import com.hufei.cfg.custom.replacebean.CustomBeanReplace;
 import com.hufei.ds.service.HtTestService;
 import lombok.extern.slf4j.Slf4j;
 

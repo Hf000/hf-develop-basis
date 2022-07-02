@@ -6,6 +6,7 @@ import org.springframework.core.ResolvableType;
 /**
  * <p> 事件监听实现方式二: 事件监听器抽象类 </p>
  *  在实现方式一的基础上进行了一些默认设置, 也可以直接实现EventListener, 然后自定义默认设置
+ *  自定义事件分发器实现 - 5
  * @author hufei
  * @version 1.0.0
  * @date 2021/10/12 15:38

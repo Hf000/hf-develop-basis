@@ -17,7 +17,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * <p> 请求参数增强处理 </p>
+ * <p> 对controller层请求参数增强处理 </p>
  *
  * @author hufei
  * @version 1.0.0

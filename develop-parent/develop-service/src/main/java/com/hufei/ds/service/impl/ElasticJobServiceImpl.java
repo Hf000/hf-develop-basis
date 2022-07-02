@@ -8,7 +8,7 @@ import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperConfiguration;
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenter;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.hufei.cfg.customjob.ElasticJobProperties;
+import com.hufei.cfg.custom.job.ElasticJobProperties;
 import com.hufei.ds.beans.bo.ElasticJobBO;
 import com.hufei.ds.constants.SsConstant;
 import com.hufei.ds.enums.ExceptionStates;

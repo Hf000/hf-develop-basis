@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * <p> java枚举标识, 用于将一个java枚举类以唯一码方式标识起来, 可以给前端提供枚举值映射
  * 结合 JavaEnumCacheManager使用
  * </p>
- *
+ * 自定义枚举注解JavaEnum实现 - 1
  * @author hufei
  * @version 1.0.0
  * @date 2021/10/12 21:00

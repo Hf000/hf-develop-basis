@@ -11,7 +11,7 @@ import java.util.Set;
 
 /**
  * <p> java枚举类过滤器 </p>
- *
+ * 自定义枚举注解JavaEnum实现 - 5
  * @author hufei
  * @version 1.0.0
  * @date 2021/10/12 22:07
