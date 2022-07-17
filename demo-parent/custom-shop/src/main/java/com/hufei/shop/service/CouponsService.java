@@ -1,0 +1,9 @@
+package com.hufei.shop.service;
+
+/**
+ * <p>  </p>
+ * @author hufei
+ * @date 2022/7/17 20:04
+*/
+public interface CouponsService {
+}
